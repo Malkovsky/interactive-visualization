@@ -1,3 +1,3 @@
 # Examples of some algorithms with python notebooks
 
-This repository contains some examples python notebooks containing materials on some issue
+This repository contains some example python notebooks with both theoretical and practical material on specific issue
