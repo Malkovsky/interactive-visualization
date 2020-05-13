@@ -2,6 +2,15 @@
 
 This repository contains some material from different computer science topics in a form of jupyter notebooks. The core feature of the presentation from is vast use of automatically generated animated examples.
 
+# Requirements and prerequisites
+
+Main visualization tools are `matplotlib` and `graphviz`, they can be installed manually or as
+```
+pip install -r requirements.txt
+```
+The other core component for most of the animated examples is [ipywidgets](https://ipywidgets.readthedocs.io/en/stable/user_install.html), check the docs for installation instractions, note that currently there might be problems when using widgets in jupyter lab.
+
+
 # Table of content
 ## Eng
 ### [Linear programming](https://github.com/Malkovsky/python-examples/blob/master/lp_overview.ipynb)
