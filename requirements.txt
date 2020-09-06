@@ -1,2 +1,4 @@
 graphviz
 matplotlib
+sklearn
+
