@@ -1,6 +1,34 @@
 # Python examples
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Malkovsky/python-examples/master)
+
 This repository contains some material from different computer science topics in a form of jupyter notebooks. The core feature of the presentation from is vast use of automatically generated animated examples.
+
+## Text animations
+
+Here's an example of quicksort algorithm using text state representation
+
+![Quicksort](https://raw.githubusercontent.com/Malkovsky/python-examples/master/images/quicksort.gif)
+
+## Matplotlib animations
+
+Using `matplotlib` one can visualize some plane algorithm, for example [EM algorithm for Old Faithfull eruption data](https://en.wikipedia.org/wiki/Expectation%E2%80%93maximization_algorithm)
+
+![em](https://raw.githubusercontent.com/Malkovsky/python-examples/master/images/em_gmm.gif)
+
+or domino coloring based on 5-coloring algorithm for planar graphs
+
+![coloring](https://raw.githubusercontent.com/Malkovsky/python-examples/master/images/planar_coloring.gif)
+
+or convex hull construction
+
+![convex_hull](https://raw.githubusercontent.com/Malkovsky/python-examples/master/images/convex_hull.gif)
+
+## Graphviz
+
+Using `graphviz` one can visualize basic graph algorithms, here's an example of Dijkstra algorithm
+
+![dijkstra](https://raw.githubusercontent.com/Malkovsky/python-examples/master/images/dijkstra_slow.gif)
 
 # Requirements and prerequisites
 
