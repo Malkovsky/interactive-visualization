@@ -1,2 +1,3 @@
 graphviz
+texlive
 texlive-latex-extra
