@@ -30,14 +30,14 @@ Using `graphviz` one can visualize basic graph algorithms, here's an example of 
 
 ![dijkstra](https://raw.githubusercontent.com/Malkovsky/python-examples/master/images/dijkstra_slow.gif)
 
-# Requirements and prerequisites
+# Requirements and installation
 
-Main visualization tools are `matplotlib` and `graphviz`, they can be installed manually or as
+A proper installation on debian-based systems is
 ```
+cat apt.txt | xargs sudo apt-get install
 pip install -r requirements.txt
 ```
-The other core component for most of the animated examples is [ipywidgets](https://ipywidgets.readthedocs.io/en/stable/user_install.html), check the docs for installation instractions, note that currently there might be problems when using widgets in jupyter lab.
-
+For other linux-based OS use the appropriate package manager to install packages listed in `apt.txt` which currently contains `graphviz` and `latex` needed for proper visualization in notebooks. Note that there also might be problems with [ipywidgets](https://ipywidgets.readthedocs.io/en/stable/user_install.html) in jupyter lab, check the docs for installation instructions.
 
 # Table of content
 ## Eng
