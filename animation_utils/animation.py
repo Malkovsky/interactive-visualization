@@ -38,7 +38,7 @@ def animate_list(lst, play=False, navigation=True, interval=200):
         elif play:
             display(play_widjet)
         elif navigation:
-            display(HBox([prev_button, next_button]))
+            display(widgets.HBox([prev_button, next_button]))
         
     return interact(step_slice,
                     lst=fixed(lst),
