@@ -2,7 +2,7 @@
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Malkovsky/python-examples/master)
 
-This repository contains some material from different computer science topics in a form of jupyter notebooks. The core feature of the presentation from is vast use of automatically generated animated examples.
+This repository contains some material from different computer science topics in a form of jupyter notebooks. The core feature of the presentation form is a vast usage of automatically generated animated examples. Animations below are generated in [overview](https://github.com/Malkovsky/python-examples/blob/master/overview.ipynb) notebook
 
 ## Text animations
 
