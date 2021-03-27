@@ -1,5 +1,4 @@
 graphviz
 matplotlib
 sklearn
-cvxpy
-
+setuptools
