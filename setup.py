@@ -9,7 +9,7 @@ long_description = (here / 'README.md').read_text(encoding='utf-8')
 
 setup(
     name="interactive-visualization", # Replace with your own username
-    version="0.1.1",
+    version="0.1.2",
     author="Nikolay Malkovsky",
     author_email="malkovskynv@gmail.com",
     description="Package provides a simple widget-based framework for interactive visualization of algorithms",
@@ -28,5 +28,5 @@ setup(
     ],
     package_dir={"": "src"},
     packages=find_packages(where="src"),
-    python_requires=">=3.8",
+    python_requires=">=3.7",
 )
