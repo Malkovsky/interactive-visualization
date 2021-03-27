@@ -44,14 +44,14 @@ See [manual](https://github.com/Malkovsky/interactive-visualization/blob/master/
 
 # Examples
 ## Eng
-### [Covid-19](https://github.com/Malkovsky/interactive-visualization/blob/master/covid19.ipynb)
+### [Covid-19](https://github.com/Malkovsky/interactive-visualization/blob/master/examples/covid19.ipynb)
 Some basic parse and analysis of global Covid-19 data from Johns Hopkins University.
 ## Rus
-### [Замощене доминошками](https://github.com/Malkovsky/interactive-visualization/blob/master/domino_tiling.ipynb)
+### [Замощене доминошками](https://github.com/Malkovsky/interactive-visualization/blob/master/examples/domino_tiling.ipynb)
 Рассматривается задача покрытия фигур на плоскости, состоящиех из квадратных клеток одинакового размера и два её программных решения: с помощью динамического программирования по профилю и с помощью нахождения максимального паросочетания. Бонусом идет раскраска планарного графа в 5 цветов (не протестировано).
-### [Обходы на графах](https://github.com/Malkovsky/interactive-visualization/blob/master/basic_searches.ipynb)
+### [Обходы на графах](https://github.com/Malkovsky/interactive-visualization/blob/master/examples/basic_searches.ipynb)
 Разобраны обходы в глубину и ширину, а так же их базовые применения.
-### [Кратчайшие пути на графах](https://github.com/Malkovsky/interactive-visualization/blob/master/shortest_paths.ipynb)
+### [Кратчайшие пути на графах](https://github.com/Malkovsky/interactive-visualization/blob/master/examples/shortest_paths.ipynb)
 Основные алгоритмы для задачи о крайших путях от одной вершины до всех остальных. Все алгоритмы представлены как модификации "сканирующего метода".
-### [Префиксное дерево](https://github.com/Malkovsky/interactive-visualization/blob/master/preffix_tree.ipynb)
+### [Префиксное дерево](https://github.com/Malkovsky/interactive-visualization/blob/master/examples/preffix_tree.ipynb)
 Префиксное дерево, префикс-функцию, алгоритм Ахо-Корасик и их применения в марковских моделях для обработки текста.
