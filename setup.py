@@ -9,7 +9,7 @@ long_description = (here / 'README.md').read_text(encoding='utf-8')
 
 setup(
     name="interactive-visualization", # Replace with your own username
-    version="0.1.2",
+    version="0.1.3",
     author="Nikolay Malkovsky",
     author_email="malkovskynv@gmail.com",
     description="Package provides a simple widget-based framework for interactive visualization of algorithms",
@@ -28,5 +28,9 @@ setup(
     ],
     package_dir={"": "src"},
     packages=find_packages(where="src"),
+    install_requires=[
+        'graphviz',
+        'matplotlib'
+    ],
     python_requires=">=3.7",
 )
