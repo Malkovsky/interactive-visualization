@@ -97,8 +97,8 @@ class Graph:
 
         return result
 
-    def Visualize(self, dist=None):
-        graph_repr = graphviz.Digraph(graph_attr={"rankdir" : "LR"}, edge_attr={'arrowhead':'vee'})
+    def Visualize(self, dist=None, graph_attr={"rankdir" : "LR"}):
+        graph_repr = graphviz.Digraph(graph_attr=graph_attr, edge_attr={'arrowhead':'vee'})
         attrs = {}
         if self.rank is None:
             for id_, node in self.nodes.items():
