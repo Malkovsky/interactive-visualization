@@ -2,3 +2,5 @@ graphviz
 matplotlib
 sklearn
 setuptools
+flake8
+pytest
