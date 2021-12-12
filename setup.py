@@ -8,7 +8,7 @@ here = pathlib.Path(__file__).parent.resolve()
 long_description = (here / 'README.md').read_text(encoding='utf-8')
 
 setup(
-    name="interactive-visualization", # Replace with your own username
+    name="interactive-visualization",
     version="0.1.4",
     author="Nikolay Malkovsky",
     author_email="malkovskynv@gmail.com",
@@ -20,8 +20,8 @@ setup(
         "Bug Tracker": "https://github.com/Malkovsky/interactive-visualization/issues",
     },
     classifiers=[
-	"Development Status :: 4 - Beta",
-	"Topic :: Scientific/Engineering :: Visualization",
+        "Development Status :: 4 - Beta",
+        "Topic :: Scientific/Engineering :: Visualization",
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
@@ -32,5 +32,6 @@ setup(
         'graphviz',
         'matplotlib'
     ],
+    test_suite="tests",
     python_requires=">=3.7",
 )
