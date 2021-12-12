@@ -1,21 +1,25 @@
 import matplotlib.pyplot as plt
 from matplotlib import colors as mcolors
+import random
 
 colors = dict(mcolors.BASE_COLORS, **mcolors.CSS4_COLORS)
 
 # Sort colors by hue, saturation, value and name.
 by_hsv = sorted((tuple(mcolors.rgb_to_hsv(mcolors.to_rgba(color)[:3])), name)
                 for name, color in colors.items())
-names = [name for hsv, name in by_hsv if name not in {'black', 'k', 'w', 'white', 'crimson', 'royalblue', 'limegreen', 'yellow', 'orange'}]
-import random
+names = [name for hsv, name in by_hsv if
+         name not in {'black', 'k', 'w', 'white', 'crimson', 'royalblue', 'limegreen', 'yellow', 'orange'}]
+
 random.shuffle(names)
 names = ['crimson', 'royalblue', 'limegreen', 'yellow', 'orange', *names]
 names.append('red')
 names.append('white')
 names.append('black')
 
+
 def fill_cell(i, j, color, ax):
     ax.fill([i, i, i + 1, i + 1, i], [j, j + 1, j + 1, j, j], color=color)
+
 
 def draw_filling(filling, horizonal_scale=0.75, vertical_scale=0.75):
     if filling is not None:

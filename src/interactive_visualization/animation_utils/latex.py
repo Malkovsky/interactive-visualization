@@ -21,7 +21,7 @@ class Matrix:
                     ' & '.join([f"{self.entry_[i, j]:.3f}" for j in range(self.entry_.shape[1])]) + ' \\\\'
                 )
 
-        lines.append(f"\\end{{array}}")
+        lines.append("\\end{{array}}")
         lines.append("\\right)")
         return os.linesep.join(lines)
 
@@ -31,9 +31,9 @@ def import_as_beamer_images(outlist, imagedir, preffix, frame_name=""):
     if not os.path.isdir(imagedir):
         os.makedirs(imagedir)
     for i, graph_repr in enumerate(outlist):
-        latex_lines.append(f'\\begin{{frame}}{{frame_name}}')
+        latex_lines.append('\\begin{{frame}}{{frame_name}}')
         graph_repr.render(filename=os.path.join(imagedir, preffix + str(i)),
                           format='pdf')
         latex_lines.append(f'\t\\includegraphics[width=\\textwidth]{{{imagedir}/{preffix}{str(i)}.pdf}}')
-        latex_lines.append(f'\\end{{frame}}')
+        latex_lines.append('\\end{{frame}}')
     return latex_lines
