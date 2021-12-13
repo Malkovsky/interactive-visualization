@@ -40,4 +40,4 @@ workflows:
   main:
     jobs:
       - linter
-      - run-tests
+      - build-and-test
