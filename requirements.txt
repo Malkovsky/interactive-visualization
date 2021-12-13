@@ -3,4 +3,5 @@ matplotlib
 sklearn
 setuptools
 flake8
+ipywidgets
 pytest
