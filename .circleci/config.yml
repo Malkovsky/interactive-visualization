@@ -73,7 +73,10 @@ jobs:
 workflows:
   build-andd-deploy:
     jobs:
-      - linter
+      - linter:
+          filters:
+            tags:
+              only: /.*/
       - build-and-test:
           requires:
             - linter
