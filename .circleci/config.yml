@@ -47,18 +47,18 @@ jobs:
   					python -m build
   					twine upload --repository testpypi --non-interactive -u __token__ -p $TWINE_TOKEN dist/*
   deploy-pypi:
-		docker:
-			- image: cimg/python:3.8
-		steps:
-			- checkout
-			- python/install-packages:
-					pkg-manager: pip
-			- run:
-  			  name: build and upload to pypi
-					command: |
-  					python -m pip install --upgrade twine
-  					python -m build
-  					python -m twine upload --non-interactive -u __token__ -p $TWINE_TOKEN dist/*
+    docker:
+      - image: cimg/python:3.8
+    steps:
+      - checkout
+      - python/install-packages:
+          pkg-manager: pip
+      - run:
+          name: build and upload to pypi
+          command: |
+            python -m pip install --upgrade twine
+            python -m build
+            python -m twine upload --non-interactive -u __token__ -p $TWINE_TOKEN dist/*
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
