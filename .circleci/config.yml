@@ -71,7 +71,7 @@ jobs:
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  build-andd-deploy:
+  build-and-deploy:
     jobs:
       - linter:
           filters:
@@ -91,11 +91,11 @@ workflows:
               only: v(\d+)\.(\d+).(\d+)-rc(\d+)
             branches:
               ignore: /.*/
-  release-build:
-    jobs:
       - deploy-pypi:
+          requires:
+            - build-and-test
           filters:
             tags:
               only: v(\d+)\.(\d+).(\d+)
             branches:
-              only: master
+              ignore: /.*/
