@@ -41,10 +41,14 @@ jobs:
       - python/install-packages:
           pkg-manager: pip
       - run:
-          name: build and upload to test pypi
+          name: build pkg
+          command: |
+            python -m pip install --upgrade build
+            python -m build
+      - run:
+          name: upload to test pypi
           command: |
             python -m pip install --upgrade twine
-            python -m build
             twine upload --repository testpypi --non-interactive -u __token__ -p $TWINE_TOKEN dist/*
   deploy-pypi:
     docker:
@@ -53,11 +57,15 @@ jobs:
       - checkout
       - python/install-packages:
           pkg-manager: pip
+      - run:  
+          name: build pkg
+          command: |
+            python -m pip install --upgrade build
+            python -m build
       - run:
           name: build and upload to pypi
           command: |
             python -m pip install --upgrade twine
-            python -m build
             python -m twine upload --non-interactive -u __token__ -p $TWINE_TOKEN dist/*
 
 # Invoke jobs via workflows
