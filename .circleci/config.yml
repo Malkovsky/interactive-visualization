@@ -33,11 +33,69 @@ jobs:
           command: python setup.py install
       - run:
           command: pytest
+  deploy-pypi-test:
+    docker:
+      - image: cimg/python:3.8
+    steps:
+      - checkout
+      - python/install-packages:
+          pkg-manager: pip
+      - run:
+          name: build pkg
+          command: |
+            python -m pip install --upgrade build
+            python -m build
+      - run:
+          name: upload to test pypi
+          command: |
+            python -m pip install --upgrade twine
+            python -m twine upload --repository testpypi --non-interactive --skip-existing -u __token__ -p $TWINE_TEST_TOKEN dist/*
+  deploy-pypi:
+    docker:
+      - image: cimg/python:3.8
+    steps:
+      - checkout
+      - python/install-packages:
+          pkg-manager: pip
+      - run:  
+          name: build pkg
+          command: |
+            python -m pip install --upgrade build
+            python -m build
+      - run:
+          name: build and upload to pypi
+          command: |
+            python -m pip install --upgrade twine
+            python -m twine upload --non-interactive -u __token__ -p $TWINE_TOKEN dist/*
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  main:
+  build-and-deploy:
     jobs:
-      - linter
-      - build-and-test
+      - linter:
+          filters:
+            tags:
+              only: /.*/
+      - build-and-test:
+          requires:
+            - linter
+          filters:
+            tags:
+              only: /.*/
+      - deploy-pypi-test:
+          requires:
+            - build-and-test
+          filters:
+            tags:
+              only: /^v(\d+)\.(\d+).(\d+)-rc(\d+)/
+            branches:
+              ignore: /.*/
+      - deploy-pypi:
+          requires:
+            - build-and-test
+          filters:
+            tags:
+              only: /^v(\d+)\.(\d+).(\d+)/
+            branches:
+              ignore: /.*/
