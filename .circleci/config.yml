@@ -49,7 +49,7 @@ jobs:
           name: upload to test pypi
           command: |
             python -m pip install --upgrade twine
-            python -m twine upload --repository testpypi --non-interactive -u __token__ -p $TWINE_TOKEN dist/*
+            python -m twine upload --repository testpypi --non-interactive -u __token__ -p $TWINE_TEST_TOKEN dist/*
   deploy-pypi:
     docker:
       - image: cimg/python:3.8
