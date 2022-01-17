@@ -88,7 +88,7 @@ workflows:
             - build-and-test
           filters:
             tags:
-              only: v(\d+)\.(\d+).(\d+)-rc(\d+)
+              only: /^v(\d+)\.(\d+).(\d+)-rc(\d+)/
             branches:
               ignore: /.*/
       - deploy-pypi:
@@ -96,6 +96,6 @@ workflows:
             - build-and-test
           filters:
             tags:
-              only: v(\d+)\.(\d+).(\d+)
+              only: /^v(\d+)\.(\d+).(\d+)/
             branches:
               ignore: /.*/
