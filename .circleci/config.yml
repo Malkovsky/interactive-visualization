@@ -71,23 +71,24 @@ jobs:
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  main:
+  regular:
     jobs:
       - linter
       - build-and-test:
           requires:
             - linter
+
+  release-candidate-build:
+    jobs:
       - deploy-pypi-test:
-          requires:
-            - build-and-test
           filters:
             tags:
-              only: rc-v(\d+)\.(\d+).(\d+)
+              only: v(\d+)\.(\d+).(\d+)-rc(\d+)
             branches:
               ignore: master
+  release-build:
+    jobs:
       - deploy-pypi:
-          requires:
-            - build-and-test
           filters:
             tags:
               only: v(\d+)\.(\d+).(\d+)
