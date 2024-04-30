@@ -1,6 +1,6 @@
 graphviz
 matplotlib
-sklearn
+scikit-learn
 setuptools
 flake8
 ipywidgets
